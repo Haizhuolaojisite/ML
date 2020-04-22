@@ -1,0 +1,113 @@
+  random_state 相当于随机数种子random.seed() 。random_state 与 random seed 作用是相同的。
+
+随机数种子代码演示：在1-100中取10个随机数
+        第一段和第二段代码完全相同，都没有设置 random seed。它每次取的结果就不同，它的随机数种子与当前系统时间有关。
+import random
+for i in range(10)
+  print(random.randint(1,100))
+  
+输出：13
+      80
+      85
+      75
+      70
+      11
+      68
+      28
+      22
+      67
+for i in range(10)
+  print(random.randint(1,100))
+62
+98
+16
+83
+91
+66
+17
+93
+13
+34
+第三段和第四段代码设置了相同的 random seed（123），它们取的随机数就完全相同，多运行几次也是这样。
+random.seed(456)
+for i in range(10)
+  print(random.randint(1,100))
+96
+58
+60
+55
+60
+83
+6
+80
+94
+67
+
+random.seed(456)
+for i in range(10):
+  print(random.randint(1,100)
+96
+58
+60
+55
+60
+83
+6
+80
+94
+67
+
+第五段和第六段代码设置了 不同的random seed ，于是运行取随机数的结果也不同。
+random.seed(456)
+for i in range(10):
+  print(random.randint(1,100)
+96
+58
+60
+55
+60
+83
+6
+80
+94
+67
+
+random.seed(123)
+for i in range(10):
+  print(random.randint(1,100))
+7
+35
+12
+99
+53
+35
+14
+5
+49
+69
+
+ 如果你在需要设置随机数种子的地方都设置好，那么当别人重新运行你的代码的时候就能得到完全一样的结果，复现和你一样的过程。
+
+random_state参数：
+       例如：在sklearn可以随机分割训练集和测试集（交叉验证），只需要在代码中引入model_selection.train_test_split就可以了：
+
+from sklearn import model_selection
+
+x_train, x_test, y_train,y_test=model_selection.train_test_split(x,y,test_size=0.2,random_state=0)
+
+这里的random_state就是为了保证程序每次运行都分割一样的训练集和测试集。否则，同样的算法模型在不同的训练集和测试集上的效果不一样。
+
+当你用sklearn分割完测试集和训练集，确定模型和初始参数以后，你会发现程序每运行一次，都会得到不同的准确率，无法调参。
+这个时候就是因为没有加random_state。加上以后就可以调参了。
+
+作者：owolf
+链接：https://www.jianshu.com/p/4deb2cb2502f
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+作者：owolf
+链接：https://www.jianshu.com/p/4deb2cb2502f
+
+
+Random_state can be 0 or 1 or any other integer. 
+It should be the same value if you want to validate your processing over multiple runs of the code.
+By the way, I have seen random_state=42 used in many official examples of scikit.
