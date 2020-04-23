@@ -1,0 +1,12 @@
+Supervised Learning                                  Unsupervised Learning
+==========================================================================================================
+1. Classification:                                   1. Clustering:
+    Classifies labeled data                               Finds patterns and groupings from unlabeled data
+
+2. Regression:
+    Predicts trends using previous labeled data           Has fewer evaluation methods than supervised learing
+
+    Has more evaluation methods than unsupervised         Less controlled environment
+    learning
+    
+    Controlled environment
