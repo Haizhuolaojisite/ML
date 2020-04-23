@@ -1,0 +1,70 @@
+Major ML learning techniques
+=================================
+Regression/Estimation
+  predicting continuous values
+
+Classification
+  predicting the item class/category of a case
+
+Clustering
+  finding the structure of data;summarization
+
+Associations
+  associating frequent co-occurring items/events
+
+Anomaly detection
+  discovering abnormal and unusual cases
+
+Sequence mininig
+  Predicting next events; click-stream(Markov Model, HMM)
+
+Dimension Reduction
+  Reducing the size of data (PCA)
+  
+Recommendation Systems
+  recommended items
+  
+Scikit-learn
+===============================
+1. free software ML library
+2. Classification, regression and clustering algorithms
+3. Works with Numpy and Scipy
+4. Great documentation
+5. Easy to implement
+
+Most of the tasks that need to be done in a ML pipeline are implemented already in Scikit
+Learn, including preprocessing of data, feature selection, feature extraction,
+train test splitting, definning the algorithms, fitting models, tunining parameters, precdiction
+evaluation and exporting the model.
+
+Basically, ML algorithms benefit from standardization of the dataset. If there are some ourliers 
+or different scales fields in your dataset, you have to fix them.
+
+The pre-processing package of Scikit learn provides several common utility functions and transformer 
+classes to change raw feature vectors into a suitable form of vector for modeling. You need to split
+your dataset into train and test sets to train your model and then test the model's accuracy separately.
+
+Scikit learn can split arrays or matrices into random train and test subsets for you in one line of code
+---------------------------------------------------------------------------------------
+from sklearn import preprocessing
+X = preprocessing.StandardScaler().fit(X).transform(X)
+
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train,y_test = train_test_split(X, y, test_size = 0.33)
+--------------------------------------------------------------------------------------
+Then you can set up your algorithm. For example, you can build a classifier using a 
+support vector classification algorithm.
+
+We call our estimator instanCE CLF and initialize its parameters
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+from sklearn import svm
+clf = svm.SVC(gamma=0.001, C=100.)
+clf.fit(X_train,y_train)
+clf.predict(X_test)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Also, you can use the different metrix to evaluate your model accuracy. 
+For example, usign a confusion matrix to show the results. And finally, you save your model.
+
+from sklearn.metrics import confusion_matrix
+print(confusion_matrix(y_test, yhat,labels=[1,0]))
+
