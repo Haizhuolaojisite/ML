@@ -1,0 +1,22 @@
+1. Independent variables effectiveness on prediction
+    Does revision time, test anxiety, lecture attendance and gender have any effect on the 
+    exam performance of students?
+    
+2. Predicting impacts of changes
+
+y_hat = theta(transpose)X
+
+where theta is an nX1 vector of unknown parameters/coefficients in a multi-dimensional space;
+x is the vector of the featured sets
+
+Theta is also called parameters or weight vector of the regression equation
+
+should independent variables be continuous? Basically, categorical independent variables can
+be incorporated into a regression model by converting them into numerical variables. 
+For example, given a binary variables such as car type, the code dummy zero for manual 
+and one for automatic cars. 
+
+As a last point, remember that multiple linear regression is a specific type of linear 
+regression. So, there needs to be a linear relationship between the dependent variable 
+and each of your independent variables. There are a number of ways to check for linear 
+relationship. For example, you can use scatter plots and then visually checked for linearity. If the relationship displayed in your scatter plot is not linear, then you need to use non-linear regression. This concludes our video. Thanks for watching.
