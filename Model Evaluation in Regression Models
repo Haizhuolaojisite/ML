@@ -1,0 +1,57 @@
+Training Accuracy
+=====================================
+We said that training and testing on the same dataset produces a high training accuracy,
+but what exactly is training accuracy?
+
+Training accuracy is the percentage of correct predictions that the model makes when using 
+the test dataset.
+
+1. High training accuracy isn't necessarily a good thing
+2. it may result in an overfit the data.
+   Overfit: the model is overly trained to the dataset, which may capture noise and produce 
+   a non-generalized model
+
+Out of sample accuracy
+===========================================
+It's the percentage of correct predictions that the model makes on data that the model
+has not been trained on.
+
+Doing a train and test on the same dataset will most likely have low out-of-sample accuracy
+due to the likelihood of being over-fit. It's important that our models have high 
+out-of-sample accuracy. Because the purpose of our model is to make correct predictions
+on unknown data.
+
+How can we improve out-of-sample accuracy?
+
+One way is to use another evaluation approach called train_test_split. The model is built
+on the training set. Then the test feature set is passed to the model for prediction.
+
+Train/Test split evaluation approach
+======================================================
+Mutually exclusive 
+
+More accurate evaluation on out-of-sample accuracy
+
+However, please ensure that you train your model with the testing set afterwards.
+as you don't want to lose potentially valuable data
+
+Issue: highly dependent on which datasets the data is trained and tested.
+
+The variation of this causes train/test split to have a better out of sample prediction
+than training and testing on the same dataset. But it still has some problems due to this
+dependency.
+
+Another evaluation model, called K-fold cross-validation, resolves most of these issues.
+How do you fix a high variation that results from a dependency? 
+Well, you average it.
+
+How to use K-fold cross-validation?
+================================================================
+Accuracy of each fold is then averaged:
+e.g. Accuracy = avg(80% + 84% + 82% + 86%) = 83% 
+
+
+
+
+
+
