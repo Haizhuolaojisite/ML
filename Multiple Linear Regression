@@ -19,4 +19,7 @@ and one for automatic cars.
 As a last point, remember that multiple linear regression is a specific type of linear 
 regression. So, there needs to be a linear relationship between the dependent variable 
 and each of your independent variables. There are a number of ways to check for linear 
-relationship. For example, you can use scatter plots and then visually checked for linearity. If the relationship displayed in your scatter plot is not linear, then you need to use non-linear regression. This concludes our video. Thanks for watching.
+relationship. For example, you can use scatter plots and then visually checked for linearity. 
+
+If the relationship displayed in your scatter plot is not linear, then you need to use non-linear regression. 
+
