@@ -1,0 +1,25 @@
+1. K-means clustering represents an unsupervised algorithm, mainly used for clustering, while KNN is a supervised learning algorithm 
+used for classification.
+
+K-nearest neighbors
+==========================================
+Being a supervised classification algorithm, K-nearest neighbors needs labelled data to train on.
+
+With the given data, KNN can classify new, unlabelled data by analysis of the k number of the nearest data points. 
+Thus, the variable k is considered to be a parameter that will be established by the machine learning engineer.
+
+Thus, k-kmeans needs training data to make predictions.
+
+K-means Clustering
+==============================================
+K-means clustering represents an unsupervised clustering algorithm that needs unlabelled data to train.
+
+K-means clustering is able to gradually learn how to cluster the unlabelled points into groups by analysis of the mean distance 
+of said points. In this case, the variable k depicts the number of clusters or different groups in which the data will be gathered. 
+The algorithm functions by moving the data in such manner that error function is minimized.
+
+Differences
+==============================================
+KNN represents a supervised classification algorithm that will give new data points accordingly to the k number or the closest data points,
+
+while k-means clustering is an unsupervised clustering algorithm that gathers and groups data into k number of clusters.
